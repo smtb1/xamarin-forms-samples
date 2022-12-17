@@ -42,3 +42,10 @@ jobs:
           solution: '**/*.UWP.csproj'
           configuration: 'Debug'
           msbuildArguments: '/restore /t:Build /p:AppxPackage=false /p:ContinuousIntegrationBuild=true /p:Deterministic=false'    
+- task: XamariniOS@2
+  inputs:
+    solutionFile: '**/*.sln'
+    configuration: 'Release'
+    packageApp: true
+    buildForSimulator: true
+    runNugetRestore: false
