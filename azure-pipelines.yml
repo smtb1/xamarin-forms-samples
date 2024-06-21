@@ -17,7 +17,9 @@ jobs:
           solution: '**/*.iOS.csproj'
           configuration: 'Debug'
           msbuildArguments: '/restore /t:Build /p:ContinuousIntegrationBuild=true /p:Deterministic=false'
-  - job: build_android_samples
+  - job: - task: CocoaPods@0
+  inputs:
+    forceRepoUpdate: true
     displayName: Build Android samples
     pool:
       vmImage: 'macos-latest'
